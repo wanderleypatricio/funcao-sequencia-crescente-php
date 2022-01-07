@@ -2,7 +2,6 @@
 function sequenciaCrescente($array){
     $cont = 0;
     $aux = 0;
-    $maior = 0;
     
     $array =  explode(',', $array);
     
@@ -11,7 +10,7 @@ function sequenciaCrescente($array){
     foreach($array as $v){
         array_push($novo_array, intval($v));
     }
-    
+    $array = $novo_array;
     
     for($i = 1; $i < sizeof($novo_array); $i++){
         for($i = 1; $i < sizeof($novo_array); $i++){
@@ -44,7 +43,7 @@ function sequenciaCrescente($array){
             }
         }
             
-        echo json_encode($novo_array);
+        echo json_encode($array);
         if($cont < 1){
             echo " true";
         }else{
@@ -53,7 +52,7 @@ function sequenciaCrescente($array){
         $cont = 0;
             
     }else{
-        echo json_encode($novo_array);
+        echo json_encode($array);
         if($cont < 2){
             echo " true";
         }else{
